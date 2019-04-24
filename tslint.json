@@ -51,7 +51,7 @@
     "prefer-method-signature": true,
     "prefer-while": true,
     "prefer-switch": true,
-    "space-within-parens": true,
+    "space-within-parens": true
   },
   "rulesDirectory": []
 }
