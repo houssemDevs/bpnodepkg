@@ -54,8 +54,8 @@
   ],
   "lint-staged": {
     "src/**/*.ts": [
-      "tslint --config tslint.json --fix", 
-      "prettier --write --config prettier.config.js", 
+      "tslint --config tslint.json --fix",
+      "prettier --write --config prettier.config.js",
       "git add",
       "jest --bail --findRelatedTests"
     ]
