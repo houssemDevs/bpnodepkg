@@ -14,8 +14,8 @@
     "clean": "npx rimraf ./lib",
     "preversion": "npm run build && npm t",
     "postversion": "git push && git push --tags",
-    "format": "prettier --write --config prettier.config.js ./src/**/*.ts",
-    "lint": "tslint --config tslint.json --project tsconfig.json --fix",
+    "format": "npx prettier --write --config prettier.config.js ./src/**/*.ts",
+    "lint": "npx tslint --config tslint.json --project tsconfig.json --fix",
     "staged": "npx lint-staged"
   },
   "files": [
