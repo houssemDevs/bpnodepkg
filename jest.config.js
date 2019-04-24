@@ -5,4 +5,5 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   verbose: true,
+  notify: true
 };
