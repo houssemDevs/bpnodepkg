@@ -12,8 +12,11 @@
     "predev": "npm run clean",
     "dev": "npx tsc --watch",
     "clean": "npx rimraf ./lib",
+    "predoc": "npx rimraf ./docs",
+    "doc": "npx typedoc --out ./docs --mode modules",
+    "postdoc": "git add ./docs/* && git commit \"update docs\"",
     "preversion": "npm run build && npm t",
-    "postversion": "git push && git push --tags",
+    "postversion": "npm run doc && git push && git push --tags",
     "format": "prettier --write --config prettier.config.js ./src/**/*.ts",
     "lint": "tslint --config tslint.json --project tsconfig.json --fix",
     "staged": "npx lint-staged"
@@ -35,6 +38,7 @@
     "ts-jest": "^24.0.1",
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.14.2",
     "typescript": "^3.4.1"
   },
   "directories": {
@@ -54,8 +58,8 @@
   ],
   "lint-staged": {
     "src/**/*.ts": [
-      "tslint --config tslint.json --fix", 
-      "prettier --write --config prettier.config.js", 
+      "tslint --config tslint.json --fix",
+      "prettier --write --config prettier.config.js",
       "git add",
       "jest --bail --findRelatedTests"
     ]
